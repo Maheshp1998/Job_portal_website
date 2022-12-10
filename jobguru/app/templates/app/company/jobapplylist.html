@@ -1,0 +1,68 @@
+{% extends 'app/company/base.html' %}
+{% block content %}
+
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+
+                    <!-- Page Heading -->
+                    <h1 class="h3 mb-2 text-gray-800">Job Post List</h1>
+                    
+
+                    <!-- DataTales Example -->
+                    <div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <h5 class="m-0 font-weight-bold text-primary">List  of  Job Applicants .</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                    <thead>
+                                        <b> <tr style="font-size:14px;color:black;">
+                                            <th>Job Title</th>
+                                            <th>Candidate Name</th>
+                                            <th>Skills</th>
+                                            <th>Website</th>
+                                            <th>Experience</th>
+                                            <th>Expected salary</th>
+                                            <th>Location</th>
+                                        </tr>
+                                    </thead>
+                                    <tfoot>
+                                       <b> <tr style="font-size:14px;color:black;"></b>
+                                        <th>Job Title</th>
+                                        <th>Candidate Name</th>
+                                        <th>Skills</th>
+                                        <th>Website</th>
+                                        <th>Experience</th>
+                                        <th>Expected salary</th>
+                                        <th>Location</th>
+                                        </tr>
+                                    </tfoot>
+                                    {% if all_jobapply %}
+                                    <tbody>
+                                        {% for i in all_jobapply  %}
+                                        <b> <tr style="font-size:14px;color:black;">
+                                            <td>{{i.jobtitle}}</td>
+                                            <td>{{i.firstname}} {{i.lastname}}</td>
+                                            <td>{{i.skills}}</td>
+                                            <td>{{i.website}}</td>
+                                            <td>{{i.experience}}</td>
+                                            <td>{{i.e_ctc}}</td>
+                                            <td>{{i.city}}</td>
+                                        </tr>
+                                        {% endfor %}
+                                    </tbody>
+                                    {% endif %}
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- /.container-fluid -->
+
+            </div>
+            <!-- End of Main Content -->
+
+
+            {% endblock content %}

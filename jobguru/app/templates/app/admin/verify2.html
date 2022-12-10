@@ -1,0 +1,64 @@
+{% extends 'app/admin/base.html' %}
+{% block content %}
+
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+
+                    <body class="bg-gradient-primary">
+
+
+                        <!-- Outer Row -->
+                        <div class="row justify-content-">
+                            <h2 style="font-weight: 600; margin-left: 25px;">Company Verify Page </h2>
+                            <div class="col-xl-12 col-lg-2 col-md-12">
+                
+                                <div class="card o-hidden border-10 shadow-lg my-lg-3">
+                                    <div class="card-body p-0">
+                                        <!-- Nested Row within Card Body -->
+                                        <div style="margin-left: 300px;">
+                                            <div class="col-lg-8 d-none d-lg-block bg-login-image"></div>
+                                            <div class="col-lg-8">
+                                                <div class="p-4">
+                                                    
+                                                    <form  method="POST" action="{% url 'verifycompany' pk=request.session.id %}">
+                                                        {% csrf_token %}
+                                                        <div class="mdi-format-float-center">
+                                                            <label>Company verification:</label><hr>
+                                                            <select class="btn btn-facebook btn-user btn-block"  name="verify" id="">Company verify:
+                                                                <option value="">select Option: </option>
+                                                                <option value="True">True</option>
+                                                                <option value="False">False</option></div><br><br><hr>
+                                                            </select>
+
+                                                            
+                                                        
+                                                        </div>
+                                                        <div class="mdi-format-float-center">
+
+                                                           <br> <button style="margin-left:11.5pc" type="submit" class="btn btn-primary btn"> submit</button>
+                                                        </div><br><br><br><br><br><hr>
+                                                        
+                                                <div class="form-muted">verify comapny manually</div>
+                                                        
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                
+                            </div>
+                
+                        </div>
+                
+                        </div>
+                
+                
+                    </body>
+                
+
+            </div>
+               
+
+            <!-- End of Main Content -->
+
+{% endblock content %}

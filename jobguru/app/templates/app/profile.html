@@ -1,0 +1,1036 @@
+{% extends 'app/base1.html' %}
+
+{% block content %}
+
+    
+    <!-- Start home -->
+    <section class="bg-half page-next-level"> 
+        <div class="bg-overlay"></div>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <div class="text-center text-white">
+                        <h4 class="text-uppercase title mb-4">Job Applicaion Form </h4>
+                        <br>
+                        <ul class="page-next d-inline-block mb-0">
+                            <li><a href="index.html" class="text-uppercase font-weight-bold">Home</a></li>
+                            <li><a href="#" class="text-uppercase font-weight-bold">Pages</a></li> 
+                            <li><a href="#" class="text-uppercase font-weight-bold">Candidates</a></li> 
+                            <li>
+                                <span class="text-uppercase text-white font-weight-bold">Job Apply Form</span> 
+                            </li> 
+                               
+                        </ul>
+                        <br><img style="margin-top: 50px;" src="{{ MEDIA_URL }} {{can.profile_pic.url}} " height="150" alt="" class="d-block mx-auto shadow rounded-pill mb-4">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- end home -->
+
+    <!-- CREATE RESUME START -->
+    <section class="section">
+                       
+        <div class="container">
+        
+            <form method="post" action="{% url 'updateprofile' pk=request.session.id %}" name="contact-form" id="contact-form3" enctype= "multipart/form-data">
+                {% csrf_token %}
+            <div class="row">
+                <div class="col-lg-12"> 
+                    <h5 class="text-dark">General Information :</h5>
+                </div>
+ 
+                <div class="col-12 mt-3">
+                    <div class="custom-form p-4 border rounded">
+                        
+                            <div class="row mt-4"> <!--bracket -->
+                                <div class="col-md-12"> <!--country -->
+                                   <label style="font-weight:bold;font-size:14px" name='city' class="text-muted">Country<span class="text-danger">*</span> :</label>
+                                    <div class="registration-form-box">
+                                        
+                                        <i class="fa fa-location-arrow"></i>
+                                        <select id="select-country" class="demo-default" name='country' value="{{can.country}}"  required>
+                                            <option value="">Country/Territory</option>
+                                            <option value="AF">Afghanistan</option>
+                                            <option value="AX">&Aring;land Islands</option>
+                                            <option value="AL">Albania</option>
+                                            <option value="DZ">Algeria</option>
+                                            <option value="AS">American Samoa</option>
+                                            <option value="AD">Andorra</option>
+                                            <option value="AO">Angola</option>
+                                            <option value="AI">Anguilla</option>
+                                            <option value="AQ">Antarctica</option>
+                                            <option value="AG">Antigua and Barbuda</option>
+                                            <option value="AR">Argentina</option>
+                                            <option value="AM">Armenia</option>
+                                            <option value="AW">Aruba</option>
+                                            <option value="AU">Australia</option>
+                                            <option value="AT">Austria</option>
+                                            <option value="AZ">Azerbaijan</option>
+                                            <option value="BS">Bahamas</option>
+                                            <option value="BH">Bahrain</option>
+                                            <option value="BD">Bangladesh</option>
+                                            <option value="BB">Barbados</option>
+                                            <option value="BY">Belarus</option>
+                                            <option value="BE">Belgium</option>
+                                            <option value="BZ">Belize</option>
+                                            <option value="BJ">Benin</option>
+                                            <option value="BM">Bermuda</option>
+                                            <option value="BT">Bhutan</option>
+                                            <option value="BO">Bolivia, Plurinational State of</option>
+                                            <option value="BA">Bosnia and Herzegovina</option>
+                                            <option value="BW">Botswana</option>
+                                            <option value="BV">Bouvet Island</option>
+                                            <option value="BR">Brazil</option>
+                                            <option value="IO">British Indian Ocean Territory</option>
+                                            <option value="BN">Brunei Darussalam</option>
+                                            <option value="BG">Bulgaria</option>
+                                            <option value="BF">Burkina Faso</option>
+                                            <option value="BI">Burundi</option>
+                                            <option value="KH">Cambodia</option>
+                                            <option value="CM">Cameroon</option>
+                                            <option value="CA">Canada</option>
+                                            <option value="CV">Cape Verde</option>
+                                            <option value="KY">Cayman Islands</option>
+                                            <option value="CF">Central African Republic</option>
+                                            <option value="TD">Chad</option>
+                                            <option value="CL">Chile</option>
+                                            <option value="CN">China</option>
+                                            <option value="CX">Christmas Island</option>
+                                            <option value="CC">Cocos (Keeling) Islands</option>
+                                            <option value="CO">Colombia</option>
+                                            <option value="KM">Comoros</option>
+                                            <option value="CG">Congo</option>
+                                            <option value="CD">Congo, the Democratic Republic of the</option>
+                                            <option value="CK">Cook Islands</option>
+                                            <option value="CR">Costa Rica</option>
+                                            <option value="CI">C&ocirc;te d'Ivoire</option>
+                                            <option value="HR">Croatia</option>
+                                            <option value="CU">Cuba</option>
+                                            <option value="CY">Cyprus</option>
+                                            <option value="CZ">Czech Republic</option>
+                                            <option value="DK">Denmark</option>
+                                            <option value="DJ">Djibouti</option>
+                                            <option value="DM">Dominica</option>
+                                            <option value="DO">Dominican Republic</option>
+                                            <option value="EC">Ecuador</option>
+                                            <option value="EG">Egypt</option>
+                                            <option value="SV">El Salvador</option>
+                                            <option value="GQ">Equatorial Guinea</option>
+                                            <option value="ER">Eritrea</option>
+                                            <option value="EE">Estonia</option>
+                                            <option value="ET">Ethiopia</option>
+                                            <option value="FK">Falkland Islands (Malvinas)</option>
+                                            <option value="FO">Faroe Islands</option>
+                                            <option value="FJ">Fiji</option>
+                                            <option value="FI">Finland</option>
+                                            <option value="FR">France</option>
+                                            <option value="GF">French Guiana</option>
+                                            <option value="PF">French Polynesia</option>
+                                            <option value="TF">French Southern Territories</option>
+                                            <option value="GA">Gabon</option>
+                                            <option value="GM">Gambia</option>
+                                            <option value="GE">Georgia</option>
+                                            <option value="DE">Germany</option>
+                                            <option value="GH">Ghana</option>
+                                            <option value="GI">Gibraltar</option>
+                                            <option value="GR">Greece</option>
+                                            <option value="GL">Greenland</option>
+                                            <option value="GD">Grenada</option>
+                                            <option value="GP">Guadeloupe</option>
+                                            <option value="GU">Guam</option>
+                                            <option value="GT">Guatemala</option>
+                                            <option value="GG">Guernsey</option>
+                                            <option value="GN">Guinea</option>
+                                            <option value="GW">Guinea-Bissau</option>
+                                            <option value="GY">Guyana</option>
+                                            <option value="HT">Haiti</option>
+                                            <option value="HM">Heard Island and McDonald Islands</option>
+                                            <option value="VA">Holy See (Vatican City State)</option>
+                                            <option value="HN">Honduras</option>
+                                            <option value="HK">Hong Kong</option>
+                                            <option value="HU">Hungary</option>
+                                            <option value="IS">Iceland</option>
+                                            <option value="IN">India</option>
+                                            <option value="ID">Indonesia</option>
+                                            <option value="IR">Iran, Islamic Republic of</option>
+                                            <option value="IQ">Iraq</option>
+                                            <option value="IE">Ireland</option>
+                                            <option value="IM">Isle of Man</option>
+                                            <option value="IL">Israel</option>
+                                            <option value="IT">Italy</option>
+                                            <option value="JM">Jamaica</option>
+                                            <option value="JP">Japan</option>
+                                            <option value="JE">Jersey</option>
+                                            <option value="JO">Jordan</option>
+                                            <option value="KZ">Kazakhstan</option>
+                                            <option value="KE">Kenya</option>
+                                            <option value="KI">Kiribati</option>
+                                            <option value="KP">Korea, Democratic People's Republic of</option>
+                                            <option value="KR">Korea, Republic of</option>
+                                            <option value="KW">Kuwait</option>
+                                            <option value="KG">Kyrgyzstan</option>
+                                            <option value="LA">Lao People's Democratic Republic</option>
+                                            <option value="LV">Latvia</option>
+                                            <option value="LB">Lebanon</option>
+                                            <option value="LS">Lesotho</option>
+                                            <option value="LR">Liberia</option>
+                                            <option value="LY">Libyan Arab Jamahiriya</option>
+                                            <option value="LI">Liechtenstein</option>
+                                            <option value="LT">Lithuania</option>
+                                            <option value="LU">Luxembourg</option>
+                                            <option value="MO">Macao</option>
+                                            <option value="MK">Macedonia, the former Yugoslav Republic of</option>
+                                            <option value="MG">Madagascar</option>
+                                            <option value="MW">Malawi</option>
+                                            <option value="MY">Malaysia</option>
+                                            <option value="MV">Maldives</option>
+                                            <option value="ML">Mali</option>
+                                            <option value="MT">Malta</option>
+                                            <option value="MH">Marshall Islands</option>
+                                            <option value="MQ">Martinique</option>
+                                            <option value="MR">Mauritania</option>
+                                            <option value="MU">Mauritius</option>
+                                            <option value="YT">Mayotte</option>
+                                            <option value="MX">Mexico</option>
+                                            <option value="FM">Micronesia, Federated States of</option>
+                                            <option value="MD">Moldova, Republic of</option>
+                                            <option value="MC">Monaco</option>
+                                            <option value="MN">Mongolia</option>
+                                            <option value="ME">Montenegro</option>
+                                            <option value="MS">Montserrat</option>
+                                            <option value="MA">Morocco</option>
+                                            <option value="MZ">Mozambique</option>
+                                            <option value="MM">Myanmar</option>
+                                            <option value="NA">Namibia</option>
+                                            <option value="NR">Nauru</option>
+                                            <option value="NP">Nepal</option>
+                                            <option value="NL">Netherlands</option>
+                                            <option value="AN">Netherlands Antilles</option>
+                                            <option value="NC">New Caledonia</option>
+                                            <option value="NZ">New Zealand</option>
+                                            <option value="NI">Nicaragua</option>
+                                            <option value="NE">Niger</option>
+                                            <option value="NG">Nigeria</option>
+                                            <option value="NU">Niue</option>
+                                            <option value="NF">Norfolk Island</option>
+                                            <option value="MP">Northern Mariana Islands</option>
+                                            <option value="NO">Norway</option>
+                                            <option value="OM">Oman</option>
+                                            <option value="PK">Pakistan</option>
+                                            <option value="PW">Palau</option>
+                                            <option value="PS">Palestinian Territory, Occupied</option>
+                                            <option value="PA">Panama</option>
+                                            <option value="PG">Papua New Guinea</option>
+                                            <option value="PY">Paraguay</option>
+                                            <option value="PE">Peru</option>
+                                            <option value="PH">Philippines</option>
+                                            <option value="PN">Pitcairn</option>
+                                            <option value="PL">Poland</option>
+                                            <option value="PT">Portugal</option>
+                                            <option value="PR">Puerto Rico</option>
+                                            <option value="QA">Qatar</option>
+                                            <option value="RE">R&eacute;union</option>
+                                            <option value="RO">Romania</option>
+                                            <option value="RU">Russian Federation</option>
+                                            <option value="RW">Rwanda</option>
+                                            <option value="BL">Saint Barth&eacute;lemy</option>
+                                            <option value="SH">Saint Helena, Ascension and Tristan da Cunha</option>
+                                            <option value="KN">Saint Kitts and Nevis</option>
+                                            <option value="LC">Saint Lucia</option>
+                                            <option value="MF">Saint Martin (French part)</option>
+                                            <option value="PM">Saint Pierre and Miquelon</option>
+                                            <option value="VC">Saint Vincent and the Grenadines</option>
+                                            <option value="WS">Samoa</option>
+                                            <option value="SM">San Marino</option>
+                                            <option value="ST">Sao Tome and Principe</option>
+                                            <option value="SA">Saudi Arabia</option>
+                                            <option value="SN">Senegal</option>
+                                            <option value="RS">Serbia</option>
+                                            <option value="SC">Seychelles</option>
+                                            <option value="SL">Sierra Leone</option>
+                                            <option value="SG">Singapore</option>
+                                            <option value="SK">Slovakia</option>
+                                            <option value="SI">Slovenia</option>
+                                            <option value="SB">Solomon Islands</option>
+                                            <option value="SO">Somalia</option>
+                                            <option value="ZA">South Africa</option>
+                                            <option value="GS">South Georgia and the South Sandwich Islands</option>
+                                            <option value="ES">Spain</option>
+                                            <option value="LK">Sri Lanka</option>
+                                            <option value="SD">Sudan</option>
+                                            <option value="SR">Suriname</option>
+                                            <option value="SJ">Svalbard and Jan Mayen</option>
+                                            <option value="SZ">Swaziland</option>
+                                            <option value="SE">Sweden</option>
+                                            <option value="CH">Switzerland</option>
+                                            <option value="SY">Syrian Arab Republic</option>
+                                            <option value="TW">Taiwan, Province of China</option>
+                                            <option value="TJ">Tajikistan</option>
+                                            <option value="TZ">Tanzania, United Republic of</option>
+                                            <option value="TH">Thailand</option>
+                                            <option value="TL">Timor-Leste</option>
+                                            <option value="TG">Togo</option>
+                                            <option value="TK">Tokelau</option>
+                                            <option value="TO">Tonga</option>
+                                            <option value="TT">Trinidad and Tobago</option>
+                                            <option value="TN">Tunisia</option>
+                                            <option value="TR">Turkey</option>
+                                            <option value="TM">Turkmenistan</option>
+                                            <option value="TC">Turks and Caicos Islands</option>
+                                            <option value="TV">Tuvalu</option>
+                                            <option value="UG">Uganda</option>
+                                            <option value="UA">Ukraine</option>
+                                            <option value="AE">United Arab Emirates</option>
+                                            <option value="GB">United Kingdom</option>
+                                            <option value="US">United States</option>
+                                            <option value="UM">United States Minor Outlying Islands</option>
+                                            <option value="UY">Uruguay</option>
+                                            <option value="UZ">Uzbekistan</option>
+                                            <option value="VU">Vanuatu</option>
+                                            <option value="VE">Venezuela, Bolivarian Republic of</option>
+                                            <option value="VN">Viet Nam</option>
+                                            <option value="VG">Virgin Islands, British</option>
+                                            <option value="VI">Virgin Islands, U.S.</option>
+                                            <option value="WF">Wallis and Futuna</option>
+                                            <option value="EH">Western Sahara</option>
+                                            <option value="YE">Yemen</option>
+                                            <option value="ZM">Zambia</option>
+                                            <option value="ZW">Zimbabwe</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12">
+                                    <div class="form-group app-label">
+                                        <br><label class="text-muted">Designation<span class="text-danger">*</span> :</label>
+                                        <input id="first-name" type="text" name='designation' class="form-control resume"  placeholder="" value="{{can.designation}}" readonly>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-3">
+                                    <div class="form-group app-label">
+                                        <br><label class="text-muted">Title<span class="text-danger">*</span> :</label>
+                                        <input id="first-name" type="text" name='title' class="form-control resume"  placeholder="" value="{{can.title}}" readonly>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-3">
+                                    <div class="form-group app-label">
+                                        <br><label class="text-muted">First Name<span class="text-danger">*</span> :</label>
+                                        <input id="first-name" type="text" name="firstname" class="form-control resume"  placeholder="" value="{{can.firstname}}">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-3">
+                                    <div class="form-group app-label">
+                                       <br> <label class="text-muted">Middle Name<span class="text-danger">*</span> :</label>
+                                        <input id="middle-name" name="middlename" type="text" class="form-control resume" placeholder="Middle Name" value="{{can.middlename}}">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-3">
+                                    <div class="form-group app-label">
+                                       <br> <label class="text-muted">Lastname<span class="text-danger">*</span> :</label>
+                                        <input id="surname-name" name="lastname" type="text" class="form-control resume" placeholder="Surname :" value="{{can.lastname}}">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div class="form-group app-label">
+                                        <label class="text-muted">Date Of Birth<span class="text-danger">*</span> :</label>
+                                        <input id="date-of-birth" name="dob" type="date" class="form-control resume" placeholder="13-02-1999" value="{{can.dob}}">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div class="form-group app-label">
+                                        <label class="text-muted">Gender<span class="text-danger">*</span> :</label>
+                                        <div class="form-button">
+                                            <select class="nice-select rounded" name="gender" value="{{can.gender}}">
+                                                <option>Gender</option>
+                                                <option value="Male">Male</option>
+                                                <option value="Female">Female</option>
+                                                <option value="Other">Other</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div class="form-group app-label">
+                                        <label class="text-muted">Marital Status<span class="text-danger">*</span> :</label>
+                                        <div class="form-button">
+                                            <select class="nice-select rounded" name="marital_status" value="{{can.marital_status}}">
+                                                <option data-display="Status">Status</option>
+                                                <option value="Unmarried">Unmarried</option>
+                                                <option value="Married">Married</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                        </div>
+
+                 <div class="row mt-5">
+                 <div class="col-12">
+                    <h5 class="text-dark">Contact Information :</h5>
+                </div>
+
+                <div class="col-12 mt-3">
+                    <div class="custom-form p-4 border rounded">
+                        
+                            <div class="row">
+                                
+                                <div class="col-md-4">
+                                    <div class="form-group app-label">
+                                        <label class="text-muted">Phone<span class="text-danger">*</span> :</label>
+                                        <input id="phone" name="contact" type="number" value="{{can.contact}}" class="form-control resume" placeholder="Phone No. :">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div class="form-group app-label">
+                                        <label class="text-muted">Linkden<span class="text-danger">*</span> :</label>
+                                        <input id="Linkden" type="url" name="linkden" value="{{can.linkden}}" class="form-control resume" placeholder="www.example.com">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div class="form-group app-label">
+                                        <label class="text-muted">Website<span class="text-danger">*</span> :</label>
+                                        <input id="website" type="url" name="website"  value="{{can.website}}" class="form-control resume" placeholder="www.example.com">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-3">
+                                    <div class="form-group app-label">
+                                        <label class="text-muted">City<span class="text-danger">*</span> :</label>
+                                        <input id="phone" name="city" type="text" value="{{can.city}}" class="form-control resume" placeholder="City :">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-3">
+                                    <div class="form-group app-label">
+                                        <label class="text-muted">State<span class="text-danger">*</span> :</label>
+                                        <input id="phone" name="state" type="text" value="{{can.state}}" class="form-control resume" placeholder="State :">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-3">
+                                    <div class="form-group app-label">
+                                        <label class="text-muted">Pincode<span class="text-danger">*</span> :</label>
+                                        <input id="phone" name="pincode" type="text" value="{{can.pincode}}" class="form-control resume" placeholder="Pincode :">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-3">
+                                    <div class="form-group app-label">
+                                        <label class="text-muted">E-mail<span class="text-danger">*</span> :</label>
+                                        <input id="e-mail" type="email" value="{{request.session.email}}" name="email" class="form-control resume" placeholder="Email ID :">
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-12">
+                                    <div class="form-group app-label">
+                                        <label class="text-muted">Address <span class="text-danger">*</span> :</label>
+                                        <input name="address" id="address" value="{{can.address}}" rows="4" class="form-control resume" placeholder=""></input>
+                                    </div>                                                                              
+                                </div>
+                            </div>
+                        
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <h5 class="text-dark mt-5">Education Details :</h5>
+                </div>
+
+                <div class="col-12 mt-2">
+                    <div class="custom-form p-4 border rounded">
+                        <h6 class="text-dark mt-3">Education Details : 1</h6>
+
+                <div class="row">
+                             <div class="col-md-6">
+                                <div class="form-group app-label">
+
+                                <label class="text-muted">Qualification<span class="text-danger">*</span> :</label>
+                                        <select name="qualification1" id="" value="" class="form-control resume" value="{{can.qualification1}}">
+                                            <b><option value="select title">Qualification</option></b>
+                                            <option>Post Graduation</option>
+                                            <option>Graduation</option>
+                                            <option>Diploma</option>
+                                            <option>12<sub>th</sub></option>
+                                            <option>10<sub>th</sub> </option>
+
+                                        </select>
+
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-6">
+                                    <div class="form-group app-label">
+                                        <label class="text-muted">Degree/Certification<span class="text-danger">*</span> :</label>
+                                        <input name="degree1" id="degree/certification" type="text" class="form-control resume" placeholder="" value="{{can.degree1}}">
+                                    </div>
+                                </div>
+
+
+                                <div class="col-md-6">
+                                    <div class="form-group app-label">
+                                        <label class="text-muted">University/College<span class="text-danger">*</span> :</label>
+                                        <input name="college1" id="university/college" type="text" class="form-control resume" placeholder="" value="{{can.college1}}">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group app-label">
+                                        <label class="text-muted">CGPA / Percentage. <span class="text-danger">*</span> :</label>
+                                        <input name="cgpa1" id="university/college" type="text" class="form-control resume" placeholder="8.1 or 78 %" value="{{can.cgpa1}}">
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-12">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group app-label">
+                                                <label class="text-muted">Date From<span class="text-danger">*</span> :</label>
+                                                <input id="date-from" name="datefrom1" type="date" class="form-control resume" placeholder="01-Jan-2018" value="{{can.datefrom1}}">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <div class="form-group app-label">
+                                                <label class="text-muted">Date To<span class="text-danger">*</span> :</label>
+                                                <input id="date-to" name="dateto1" type="date" class="form-control resume" placeholder="31-March-2019" value="{{can.dateto1}}"> 
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <hr>
+                                    <br>
+                                </div>
+                        
+
+                    <div class="col-12 mt-2">
+                        <h6 class="text-dark mt-3">Education Details : 2</h6>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group app-label">
+
+                                <label class="text-muted">Qualification<span class="text-danger">*</span> :</label>
+                                        <select name="qualification2" id="" value="" class="form-control resume" value="{{can.qualification2}}">
+                                            <b><option value="select title">Qualification</option></b>
+                                            <option>Post Graduation</option>
+                                            <option>Graduation</option>
+                                            <option>Diploma</option>
+                                            <option>12<sub>th</sub></option>
+                                            <option>10<sub>th</sub> </option>
+                                        </select>
+
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-6">
+                                    <div class="form-group app-label">
+                                        <label class="text-muted">Degree/Certification<span class="text-danger">*</span> :</label>
+                                        <input id="degree/certification" name="degree2" type="text" class="form-control resume" placeholder="" value="{{can.degree2}}">
+                                    </div>
+                                </div>
+
+
+                                <div class="col-md-6">
+                                    <div class="form-group app-label">
+                                        <label class="text-muted">University/College<span class="text-danger">*</span> :</label>
+                                        <input name="college2" id="university/college" type="text" class="form-control resume" placeholder="" value="{{can.college2}}">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group app-label">
+                                        <label class="text-muted">CGPA / Percentage. <span class="text-danger">*</span> :</label>
+                                        <input name="cgpa2" id="university/college" type="text" class="form-control resume"  value="{{can.cgpa2}}" placeholder="8.1 or 78 %">
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-12">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group app-label">
+                                                <label class="text-muted">Date From<span class="text-danger">*</span> :</label>
+                                                <input name="datefrom2" id="date-from" type="date" class="form-control resume" placeholder="01-Jan-2018" value="{{can.datefrom2}}">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <div class="form-group app-label">
+                                                <label class="text-muted">Date To<span class="text-danger">*</span> :</label>
+                                                <input name="dateto2" id="date-to" type="date" class="form-control resume" placeholder="31-March-2019" value="{{can.dateto2}}">
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                    <br>
+                                    <hr>
+                                    <br>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-12 mt-3">
+                            <h6 class="text-dark mt-3">Education Details : 3</h6>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group app-label">
+    
+                                    <label class="text-muted">Qualification<span class="text-danger">*</span> :</label>
+                                            <select name="qualification3" id="" value="" class="form-control resume" value="{{can.qualification3}}">
+                                                <b><option value="select title">Qualification</option></b>
+                                                <option>Post Graduation</option>
+                                                <option>Graduation</option>
+                                                <option>Diploma</option>
+                                                <option>12<sub>th</sub></option>
+                                                <option>10<sub>th</sub> </option>
+                                            </select>
+    
+                                        </div>
+                                </div>
+    
+                                    <div class="col-lg-6">
+                                        <div class="form-group app-label">
+                                            <label class="text-muted">Degree/Certification<span class="text-danger">*</span> :</label> 
+                                            <input name="degree3" id="degree/certification" type="text" class="form-control resume" placeholder="" value="{{can.degree3}}">
+                                        </div>
+                                    </div>
+    
+    
+                                    <div class="col-md-6">
+                                        <div class="form-group app-label">
+                                            <label class="text-muted">University/College<span class="text-danger">*</span> :</label>
+                                            <input name="college3" id="university/college" type="text" class="form-control resume" placeholder="" value="{{can.college3}}">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="form-group app-label">
+                                            <label class="text-muted">CGPA / Percentage. <span class="text-danger">*</span> :</label>
+                                            <input name="cgpa3" id="university/college" type="text" class="form-control resume" placeholder="8.1 or 78 %" value="{{can.cgpa3}}">
+                                        </div>
+                                    </div>
+    
+                                    <div class="col-lg-12">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group app-label">
+                                                    <label class="text-muted">Date From<span class="text-danger">*</span> :</label>
+                                                    <input name="datefrom3" value="{{can.datefrom3}}" id="date-from" type="date" class="form-control resume" placeholder="01-Jan-2018">
+                                                </div>
+                                            </div>
+    
+                                            <div class="col-md-6">
+                                                <div class="form-group app-label">
+                                                    <label class="text-muted">Date To<span class="text-danger">*</span> :</label>
+                                                    <input name="dateto3" value="{{can.dateto3}}" id="date-to" type="date" class="form-control resume" placeholder="31-March-2019">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+    
+    
+                            </div>
+                            
+                        </div>
+
+                        
+                    </div>
+
+                    
+                </div>
+
+                    
+                </div>
+                
+            </div>
+
+            <div class="row">
+                <div class="col-12 mt-5">
+                    <h4 class="text-dark">Work Experience :</h4>
+                </div>
+
+                <div class="col-12 mt-3">
+                    <div class="custom-form p-4 border rounded">
+                        <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group app-label">
+                                <h5>Total Experience In Year.</h5>
+                                <input name="experience" id="company-name" type="text" value="{{can.experience}}"  class="form-control resume" placeholder="">
+                            </div>
+                        </div>
+                        </div>
+
+                        <h6 class="text-dark">Work Experience : 1</h6> <br>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group app-label">
+                                        <label class="text-muted">Company Name<span class="text-danger">*</span> :</label>
+                                        <input name="companyname1" value="{{can.companyname1}}" id="company-name" type="text" class="form-control resume" placeholder="">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group app-label">
+                                        <label class="text-muted">Company Website<span class="text-danger">*</span> :</label>
+                                        <input name="companywebsite1" value="{{can.companywebsite1}" id="company-name" type="text" class="form-control resume" placeholder="Address :">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group app-label">
+                                        <label class="text-muted">Job Position<span class="text-danger">*</span> :</label>
+                                        <input name="jobposition1" value="{{can.jobposition1}}" id="job-position" type="text" class="form-control resume" placeholder="">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group app-label">
+                                        <label class="text-muted">Location<span class="text-danger">*</span> :</label>
+                                        <input name="c_city1" value="{{can.c_city1}}" id="company-name" type="text" class="form-control resume" placeholder="City :">
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-12">
+                                    <div class="row">
+                                        <div class="col-lg-4">
+                                            <div class="form-group app-label">
+                                                <label class="text-muted">Currently working here<span class="text-danger">*</span> :</label>
+                                                <div class="form-button">
+                                                    <select class="nice-select rounded" name="cwh1" value="{{can.cwh1}}"> 
+                                                        <option data-display="">Select</option>
+                                                        <option value="Yes">Yes</option>
+                                                        <option value="No">No</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group app-label">
+                                                <label class="text-muted">Date From<span class="text-danger">*</span> :</label>
+                                                <input id="date-from" value="{{can.date_from1}}" name="date_from1" type="date" class="form-control resume" placeholder="01-Jan-2018">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <div class="form-group app-label">
+                                                <label class="text-muted">Date To<span class="text-danger">*</span> :</label>
+                                                <input name="date_to1" value="{{can.date_to1}}" id="date-to" type="date" class="form-control resume" placeholder="31-March-2019">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+
+                                <div class="col-lg-12">
+                                    <div class="form-group app-label">
+                                        <label>Additional Information :<span class="text-danger">*</span> :</label>
+                                        <textarea name="addinfo1" placeholder="{{can.addinfo1}}" id="addition-information-1" rows="4" class="form-control resume" placeholder=""></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+                            <hr>
+                            <br>
+
+                            <h6 class="text-dark">Work Experience : 2 </h6> <br>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group app-label">
+                                        <label class="text-muted">Company Name</label>
+                                        <input name="companyname2" value="{{can.companyname2}}" id="company-name" type="text" class="form-control resume" placeholder="">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group app-label">
+                                        <label class="text-muted">Company Website<span class="text-danger">*</span> :</label>
+                                        <input name="companywebsite2" value="{{can.companywebsite2}" id="company-name" type="text" class="form-control resume" placeholder="Address :">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group app-label">
+                                        <label class="text-muted">Job Position</label>
+                                        <input name="jobposition2" id="job-position" type="text" value="{{can.jobposition2}}" class="form-control resume" placeholder="">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group app-label">
+                                        <label class="text-muted">Location</label>
+                                        <input id="company-name" value="{{can.c_city2}}" name="c_city2" type="text" class="form-control resume" placeholder="City :">
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-12">
+                                    <div class="row">
+                                        <div class="col-lg-4">
+                                            <div class="form-group app-label">
+                                                <label class="text-muted">Currently working here<span class="text-danger">*</span> :</label>
+                                                <div class="form-button">
+                                                    <select class="nice-select rounded" name="cwh1" value="{{can.cwh1}}"> 
+                                                        <option data-display="">Select</option>
+                                                        <option value="Yes">Yes</option>
+                                                        <option value="No">No</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <div class="form-group app-label">
+                                                <label class="text-muted">Date From</label>
+                                                <input name="date_from2" id="date-from" type="date" value="{{can.date_from2}}" class="form-control resume" placeholder="01-Jan-2018">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <div class="form-group app-label">
+                                                <label class="text-muted">Date To</label>
+                                                <input name="date_to2" value="{{can.date_to2}}" id="date-to" type="date" class="form-control resume" placeholder="31-March-2019">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-12">
+                                    <div class="form-group app-label">
+                                        <label>Additional Information :</label>
+                                        <textarea name="addinfo2" placeholder="{{can.addinfo2}}" id="addition-information-1" rows="4" class="form-control resume" placeholder=""></textarea>
+                                    </div>
+                                    <br>
+                                    <hr>
+                                    <br>
+                                </div>
+                           
+                            <div class="col-12 mt-3">
+                                <h6 class="text-dark">Work Experience : 3 </h6> <br>
+                            <div class="row">
+                                <div class="col-md-6">
+
+                                    <div class="form-group app-label">
+                                        <label class="text-muted">Company Name</label>
+                                        <input name="companyname3" value="{{can.companyname3}}" id="company-name" type="text" class="form-control resume" placeholder="">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group app-label">
+                                        <label class="text-muted">Company Website<span class="text-danger">*</span> :</label>
+                                        <input name="companywebsite3" value="{{can.companywebsite3}" id="company-name" type="text" class="form-control resume" placeholder="Address :">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group app-label">
+                                        <label class="text-muted">Job Position</label>
+                                        <input name="jobposition3" id="job-position" value="{{can.jobposition3}}" type="text" class="form-control resume" placeholder="">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group app-label">
+                                        <label class="text-muted">Location</label>
+                                        <input id="company-name" name="c_city3" value="{{can.c_city3}}" type="text" class="form-control resume" placeholder="City :">
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-12">
+                                    <div class="row">
+                                        <div class="col-lg-4">
+                                            <div class="form-group app-label">
+                                                <label class="text-muted">Currently working here<span class="text-danger">*</span> :</label>
+                                                <div class="form-button">
+                                                    <select class="nice-select rounded" name="cwh1" value="{{can.cwh1}}"> 
+                                                        <option data-display="">Select</option>
+                                                        <option value="Yes">Yes</option>
+                                                        <option value="No">No</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <div class="form-group app-label">
+                                                <label class="text-muted">Date From</label>
+                                                <input id="date-from" name="date_from3" value="{{can.date_from3}}" type="date" class="form-control resume" placeholder="01-Jan-2018">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <div class="form-group app-label">
+                                                <label class="text-muted">Date To</label>
+                                                <input name="date_to3" value="{{can.date_to3}" id="date-to" type="date" class="form-control resume" placeholder="31-March-2019">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-12">
+                                    <div class="form-group app-label">
+                                        <label>Additional Information :</label>
+                                        <textarea name="addinfo3" placeholder="{{can.addinfo3}}" id="addition-information-1" rows="4" class="form-control resume" placeholder=""></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                            </div>
+                    </div>
+                    
+                </div>
+            </div>
+            
+
+            <div class="row">
+                <div class="col-12 mt-5">
+                    <h5 class="text-dark">Skills :</h5>
+                </div>
+                
+                <div class="col-12 mt-3">
+                    <div class="custom-form p-3 border rounded">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="form-group app-label">
+                                        <label class="text-muted">Skills<span class="text-danger">*</span> :  <span class="text-muted">(Add only six skills)</span></label>
+                                        <input id="skills" value="{{can.skills}}" name="skills" type="text" class="form-control resume" placeholder="HTML, CSS, PHP, javascript, ...">
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+
+                <div class="col-12 mt-3">
+                    <div class="row">
+                    <div class="col-12 mt-4 ">
+                        <h5 class="text-dark">Salary :</h5>
+                    </div>
+                    <div class="col-12 mt-4">
+                        <div class="custom-form p-3 border rounded">
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="form-group app-label">
+                                            <label class="text-muted">Current Salary<span class="text-danger">*</span> :</label>
+                                            <input id="skill_proficiency" name="c_ctc" value="{{can.c_ctc}}" type="text" class="form-control resume" placeholder="In LPA">
+                                        </div>
+                                    </div>
+    
+                                    <div class="col-lg-6">
+                                        <div class="form-group app-label">
+                                            <label class="text-muted">Expected Salary<span class="text-danger">*</span> :</label>
+                                            <input id="skill_proficiency" name="e_ctc" type="text" value="{{can.e_ctc}}" class="form-control resume" placeholder="In LPA">
+                                        </div>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                </div><br>
+
+                    <div class="row">
+                    <div class="col-12 mt-4 ">
+                        <h5 class="text-dark">Objective :</h5>
+                    </div>
+                    <div class="col-12 mt-4">
+                        <div class="custom-form p-3 border rounded">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="form-group app-label">
+                                            <label class="text-muted">Objective<span class="text-danger">*</span> :</label>
+                                            <textarea id="skill_proficiency" name="objective" placeholder="{{can.objective}}" type="text" class="form-control resume" ></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+
+            <div class="row">
+                <div class="col-12 mt-3">
+                <div class="col-md-8">
+                    <ul class="list-inline mb-0">
+                        <li class="list-inline-item">
+                            <h6 class="text-muted mb-0">Upload Profile Picture</h6>
+                        </li>
+                        <li class="list-inline-item">
+                            <div class="input-group mt-2 mb-4">
+                                <div class="custom-file">
+                                    <br><input type="file" name="profilepic" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
+                                    <label class="custom-file-label rounded"><i class="mdi mdi-cloud-upload mr-1"></i> Upload Profile Picture<span class="text-danger">*</span> :</label>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-15 mt-3">
+                    <div class="col-md-8">
+                        <ul class="list-inline mb-0">
+                            <li class="list-inline-item">
+                                <h6 class="text-muted mb-0">Upload Resume.</h6>
+                            </li>
+                            <li class="list-inline-item">
+                                <div class="input-group mt-2 mb-4">
+                                    <div class="custom-file">
+                                        <br><input type="file" name="upload_resume" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
+                                        <label class="custom-file-label rounded"><i class="mdi mdi-cloud-upload mr-1"></i> Upload Resume<span class="text-danger">*</span> :</label>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            </div>
+                    </div>
+            <div class="row">
+                <div class="col-4 mt-5">
+                    <button class="btn btn-primary w-100">Update Profile Data</button>
+                </div>
+            </div>
+            </div>
+        </form>
+           
+        </div>
+    </section>
+    <!-- CREATE RESUME END -->
+
+    <!-- subscribe start -->
+    <section class="section bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-5">
+                    <div class="float-left position-relative notification-icon mr-2">
+                        <i class="mdi mdi-bell-outline text-primary"></i>
+                        <span class="badge badge-pill badge-danger">1</span>
+                    </div>
+                    <h5 class="mt-2 mb-0">Your Job Notification</h5>
+                </div>
+                <div class="col-lg-8 col-md-7 mt-4 mt-sm-0">
+                        <div class="form-group mb-0">
+                            <div class="input-group mb-0">
+                                <input name="email" id="email" type="email" class="form-control" placeholder="Your email :" required="" aria-describedby="newssubscribebtn">
+                                <div class="input-group-append">
+                                    <button class="btn btn-primary submitBnt" type="submit" id="newssubscribebtn">Subscribe</button>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- subscribe end -->
+
+   
+   {% endblock content %}

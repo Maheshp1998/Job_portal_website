@@ -1,0 +1,63 @@
+{% extends 'app/admin/base.html' %}
+{% block content %}
+
+                <!-- Begin Page Content -->
+            <div class="container-fluid">
+
+                    <body class="bg-gradient-primary">
+
+
+                        <!-- Outer Row -->
+                        <div class="row justify-content-">
+                            <h2 style="font-weight: 600; margin-left: 25px;">Admin Login Page </h2>
+                            
+                            {% if msg %}
+                                <h5 style="color:red;margin-top: 8px;margin-left: 50px;">{{msg}}</h5>
+                            {% endif %}
+                                
+                
+                            <div class="col-xl-12 col-lg-2 col-md-12">
+                
+                                <div class="card o-hidden border-10 shadow-lg my-lg-3">
+                                    <div class="card-body p-0">
+                                        <!-- Nested Row within Card Body -->
+                                        <div style="margin-left: 300px;">
+                                            <div class="col-lg-8 d-none d-lg-block bg-login-image"></div>
+                                            <div class="col-lg-8">
+                                                <div class="p-5">
+                                                    <div class="text-center">
+                                                        <h1 class="h3 text-600 mb-" style="color: green;">Welcome Back Admin !</h1><br>
+                                                    </div>
+                                                    <form  method="POST" action="{% url 'adminlogin' %}">
+                                                        {% csrf_token %}
+                                                        <div class="form-group">
+                                                            <input type="text" name="username" class="form-control form-control-user"
+                                                                id="exampleInputEmail" aria-describedby="emailHelp"
+                                                                placeholder="Enter Username...">
+                                                        </div>
+                                                        <br>
+                                                       
+                                                        <a href="index.html" class="btn btn-google btn-user btn-block">
+                                                            <i class="fab fa-google fa-fw"></i> Login with Google
+                                                        </a>
+                                                      
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                
+                            </div>
+                
+                        </div>
+                
+                        </div>
+                
+                
+                    </body>
+                
+
+            </div>
+            <!-- End of Main Content -->
+
+{% endblock content %}

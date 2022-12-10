@@ -1,0 +1,317 @@
+{% extends 'app/base1.html' %}
+{% block content %}
+{% if user %}
+{% if candi %}
+{% load static %}
+
+{% comment %} {% for i in profile  %} {% endcomment %}                  
+    <!-- Start home -->
+    <section class="bg-half page-next-level"> 
+        <div class="bg-overlay"></div>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <div class="candidates-profile-details text-center">
+                        <img src="{{ MEDIA_URL }} {{candi.profilepic.url}} " height="150" alt="" class="d-block mx-auto shadow rounded-pill mb-4">
+                        <h5 class="text-white mb-2">{{candi.firstname}} {{candi.lastname}}</h5>
+                        <p class="text-white-50 h6 mb-2"><i class="mdi mdi-bank mr-2"></i>{{candi.companyname1}}</p>
+                        <p class="text-white-50 h6 mb-2">{{candi.designation}}</p>
+                        <ul class="candidates-profile-icons list-inline mb-3">
+                            <li class="list-inline-item"><a href="#" class="text-warning"><i class="mdi mdi-star"></i></a></li>
+                            <li class="list-inline-item"><a href="#" class="text-warning"><i class="mdi mdi-star"></i></a></li>
+                            <li class="list-inline-item"><a href="#" class="text-warning"><i class="mdi mdi-star"></i></a></li>
+                            <li class="list-inline-item"><a href="#" class="text-warning"><i class="mdi mdi-star"></i></a></li>
+                            <li class="list-inline-item"><a href="#" class="text-warning"><i class="mdi mdi-star"></i></a></li>
+                        </ul>
+
+                        <ul class="list-unstyled social-icon social mb-0">
+                            <li class="list-inline-item"><a href="#" class="rounded"><i class="mdi mdi-facebook"></i></a></li>
+                            <li class="list-inline-item"><a href="#" class="rounded"><i class="mdi mdi-twitter"></i></a></li>
+                            <li class="list-inline-item"><a href="#" class="rounded"><i class="mdi mdi-instagram"></i></a></li>
+                            <li class="list-inline-item"><a href="#" class="rounded"><i class="mdi mdi-google-plus"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- end home -->
+
+    <!-- CANDIDATES PROFILE START -->
+    <section class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h4 class="text-dark">Overview :</h4>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-12 mt-3">
+                    <div class="border rounded p-4">
+                        <p class="text-muted">{{candi.objective}}</p>
+                        
+                        <ul class="list-inline pt-3 border-top mb-0">
+                            <li class="list-inline-item mr-3">
+                                <a href="" class="text-muted f-15 mb-0"><i class="mdi mdi-map-marker mr-2"></i>  {{candi.address}}</a>
+                            </li>
+
+                            <li class="list-inline-item mr-3">
+                                <a href="" class="text-muted f-15 mb-0"><i class="mdi mdi-web mr-2"></i>  {{candi.website}}</a>
+                            </li>
+
+                            <li class="list-inline-item mr-3">
+                                <a href="" class="text-muted f-15 mb-0"><i class="mdi mdi-email mr-2"></i>  {{request.session.email}}</a>
+                            </li>
+
+                            <li class="list-inline-item mr-3">
+                                <a href="" class="text-muted f-15 mb-0"><i class="mdi mdi-cellphone-iphone mr-2"></i>  {{candi.contact}}</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-12 mt-4 pt-2">
+                    <h4 class="text-dark">Education :</h4>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mt-4 pt-5">
+                    <div class="border rounded candidates-profile-education text-center text-muted">
+                        <div class="profile-education-icon border rounded-pill bg-white text-primary">
+                            <i class="mdi mdi-36px mdi-school"></i>
+                        </div>
+                        <h6 class="text-uppercase f-17"><a href="#" class="text-muted">{{candi.qualification1}}</a></h6>
+                        <h6 class="text-uppercase f-17"><a href="#" class="text-muted">{{candi.degree1}}</a></h6>
+
+                      <b>  <p class="f-14 mb-1">{{candi.college1}}</p></b>
+                        <p class="pb-3 mb-0">{{candi.CGPA1}} %</p>
+                        
+                        <p class="pt-3 border-top mb-0">{{candi.datefrom1}} - {{candi.dateto1}}</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mt-4 pt-5">
+                    <div class="border rounded candidates-profile-education text-center text-muted">
+                        <div class="profile-education-icon border rounded-pill bg-white text-primary">
+                            <i class="mdi mdi-36px mdi-school"></i>
+                        </div>
+                        <h6 class="text-uppercase f-17"><a href="#" class="text-muted">{{candi.qualification2}}</a></h6>
+                        <h6 class="text-uppercase f-17"><a href="#" class="text-muted">{{candi.degree2}}</a></h6>
+                        <b><p class="f-14 mb-1">{{candi.college2}}</p></b>
+                        <p class="pb-3 mb-0">{{candi.CGPA2}}%</p>
+                        
+                        <p class="pt-3 border-top mb-0">{{candi.datefrom2}} - {{candi.dateto2}}</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mt-4 pt-5">
+                    <div class="border rounded candidates-profile-education text-center text-muted">
+                        <div class="profile-education-icon border rounded-pill bg-white text-primary">
+                            <i class="mdi mdi-36px mdi-school"></i>
+                        </div>
+                        <h6 class="text-uppercase f-17"><a href="#" class="text-muted">{{candi.qualification3}}</a></h6>
+                        <h6 class="text-uppercase f-17"><a href="#" class="text-muted">{{candi.degree3}}</a></h6>
+                       <b> <p class="f-14 mb-0">{{candi.college3}}</p></b>
+                        <p class="pb-3 mb-0">{{candi.CGPA3}}%</p>
+                        
+                        <p class="pt-3 border-top mb-0">{{candi.datefrom3}} - {{candi.dateto3}}</p>
+                    </div>
+                </div>
+
+              
+            </div>
+
+            <div class="row">
+                <div class="col-lg-12 mt-4 pt-2">
+                    <h4 class="text-dark">Experience :</h4>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6 mt-3 mt-md-0 pt-3">
+                    <div class="border rounded job-list-box p-4">
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <div class="company-brand-logo text-center mb-4">
+                                    <img src="{% static '/images/featured-job/img-2.png' %}" alt="" class="img-fluid mx-auto d-block">
+                                </div>
+                            </div>
+
+                            <div class="col-lg-9">
+                                <div class="job-list-desc candidates-profile-exp-desc">
+                                    <h5 class="f-19 mb-2"><a href="#" class="text-dark">{{candi.companyname1}}</a></h5>
+                                    <p class="text-muted mb-0 f-16">{{candi.jobposition1}}</p>
+                                    <p class="text-muted mb-0 f-16">{{candi.date_from1}} To {{candi.date_to1}}</p>
+                                    <p class="text-muted mb-0 f-16">CTC : {{candi.c_ctc}}</p>
+                                    <p class="text-muted mb-0 f-16"><i class="mdi mdi-bank mr-2"></i>{{candi.companywebsite1}}</p>
+                                    <p class="text-muted mb-0 f-16"><i class="mdi mdi-map-marker mr-2"></i>{{candi.c_city1}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 mt-3 mt-md-0 pt-3">
+                    <div class="border rounded job-list-box p-4">
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <div class="company-brand-logo text-center mb-4">
+                                    <img src="{% static '/images/featured-job/img-3.png' %}" alt="" class="img-fluid mx-auto d-block">
+                                </div>
+                            </div>
+
+                            <div class="col-lg-9">
+                                <div class="job-list-desc candidates-profile-exp-desc">
+                                    <h5 class="f-19 mb-2"><a href="#" class="text-dark">{{candi.companyname2}}</a></h5>
+                                    <p class="text-muted mb-0 f-16">{{candi.jobposition2}}</p>
+                                    <p class="text-muted mb-0 f-16">{{candi.date_from2}} To {{candi.date_to2}}</p>
+                                    <p class="text-muted mb-0 f-16">CTC : {{candi.c_ctc}}</p>
+                                    <p class="text-muted mb-0 f-16"><i class="mdi mdi-bank mr-2"></i>{{candi.companywebsite2}}</p>
+                                    <p class="text-muted mb-0 f-16"><i class="mdi mdi-map-marker mr-2"></i>{{candi.c_city2}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6 mt-3 mt-md-0 pt-3">
+                    <div class="border rounded job-list-box p-4">
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <div class="company-brand-logo text-center mb-4">
+                                    <img src="{% static '/images/featured-job/img-5.png' %}" alt="" class="img-fluid mx-auto d-block">
+                                </div>
+                            </div>
+
+                            <div class="col-lg-9">
+                                <div class="job-list-desc candidates-profile-exp-desc">
+                                    <h5 class="f-19 mb-2"><a href="#" class="text-dark">{{candi.companyname3}}</a></h5>
+                                    <p class="text-muted mb-0 f-16">{{candi.jobposition3}}</p>
+                                    <p class="text-muted mb-0 f-16">{{candi.date_from3}} To {{candi.date_to3}}</p>
+                                    <p class="text-muted mb-0 f-16">CTC : {{candi.c_ctc}}</p>
+                                    <p class="text-muted mb-0 f-16"><i class="mdi mdi-bank mr-2"></i>{{candi.companywebsite3}}</p>
+                                    <p class="text-muted mb-0 f-16"><i class="mdi mdi-map-marker mr-2"></i>{{candi.c_city3}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 mt-3 mt-md-0 pt-3">
+                    <div class="border rounded job-list-box p-4">
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <div class="company-brand-logo text-center mb-4">
+                                    <img src="{% static '/images/featured-job/img-7.png' %}" alt="" class="img-fluid mx-auto d-block">
+                                </div>
+                            </div>
+
+                            <div class="col-lg-9">
+                                <div class="job-list-desc candidates-profile-exp-desc">
+                                    <h5 class="f-19 mb-2"><a href="#" class="text-dark">{{candi.companyname1}}</a></h5>
+                                    <p class="text-muted mb-0 f-16">{{candi.jobposition1}}</p>
+                                    <p class="text-muted mb-0 f-16">{{candi.date_from1}} To {{candi.date_to1}}</p>
+                                    <p class="text-muted mb-0 f-16">CTC : {{candi.c_ctc}}</p>
+                                    <p class="text-muted mb-0 f-16"><i class="mdi mdi-bank mr-2"></i>{{candi.companywebsite1}}</p>
+                                    <p class="text-muted mb-0 f-16"><i class="mdi mdi-map-marker mr-2"></i>{{candi.c_city1}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-12 mt-4 pt-2">
+                    <h4 class="text-dark">Skills :</h4>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-6 mt-4 pt-2">
+                    <h6 class="mb-0 text-uppercase">Language Knowledge :</h6>
+                    {% comment %} <div class="progress-box mt-4">
+                        <h6 class="title text-muted">Spanish</h6>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-striped position-relative bg-primary" style="width:84%;">
+                                <div class="progress-value d-block text-muted h6">84%</div>
+                            </div>
+                        </div>
+                    </div><!--end process box--> {% endcomment %}
+                    
+                    <div class="progress-box mt-4">
+                        <h6 class="title text-muted">English</h6>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-striped position-relative bg-primary" style="width:95%;">
+                                <div class="progress-value d-block text-muted h6">95%</div>
+                            </div>
+                        </div>
+                    </div><!--end process box-->
+                    <div class="progress-box mt-4">
+                        <h6 class="title text-muted">Japanese</h6>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-striped position-relative bg-primary" style="width:75%;">
+                                <div class="progress-value d-block text-muted h6">75%</div>
+                            </div>
+                        </div>
+                    </div><!--end process box-->
+                    {% comment %} <div class="progress-box mt-4">
+                        <h6 class="title text-muted">Arabic</h6>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-striped position-relative bg-primary" style="width:79%;">
+                                <div class="progress-value d-block text-muted h6">79%</div>
+                            </div>
+                        </div>
+                    </div><!--end process box--> {% endcomment %}
+                </div>
+
+                <div class="col-md-6 mt-4 pt-2">
+                    <h6 class="mb-0 text-uppercase">Coding Expertise :</h6>
+                    <div class="progress-box mt-4">
+                        <h6 class="title text-muted">Python/Django</h6>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-striped position-relative bg-primary" style="width:84%;">
+                                <div class="progress-value d-block text-muted h6">84%</div>
+                            </div>
+                        </div>
+                    </div><!--end process box-->
+                    <div class="progress-box mt-4">
+                        <h6 class="title text-muted">PHP / MYSQL</h6>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-striped position-relative bg-primary" style="width:75%;">
+                                <div class="progress-value d-block text-muted h6">75%</div>
+                            </div>
+                        </div>
+                    </div><!--end process box-->
+                    <div class="progress-box mt-4">
+                        <h6 class="title text-muted">Angular / JavaScript</h6>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-striped position-relative bg-primary" style="width:79%;">
+                                <div class="progress-value d-block text-muted h6">79%</div>
+                            </div>
+                        </div>
+                    </div><!--end process box-->
+                    <div class="progress-box mt-4">
+                        <h6 class="title text-muted">HTML / CSS</h6>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-striped position-relative bg-primary" style="width:95%;">
+                                <div class="progress-value d-block text-muted h6">95%</div>
+                            </div>
+                        </div>
+                    </div><!--end process box-->
+                </div>
+            </div>         
+        </div>
+    </section>
+    <!-- CANDIDATES PROFILE END -->
+    {% comment %} {% endfor %} {% endcomment %}
+
+{% endif %}
+{% endif %}
+    {% endblock content %}
